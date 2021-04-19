@@ -8,6 +8,18 @@ var gCtx;
     renderMeme();
 })();
 
+
+function onAddLine() {
+    addLine(gCanvas.width/2, gCanvas.width/2);
+    renderMeme();
+}
+
+function onChangeLine(value) {
+    changeLine(value);
+    renderMeme();
+    renderLineEditor();
+}
+
 function renderMeme() {
     let meme = getMeme();
     let img = getImgById(meme.selectedImgId);
@@ -17,6 +29,15 @@ function renderMeme() {
             renderLine(line, lineCount++);
         });
     });
+}
+
+function onChangeFocus() {
+    changeFocus();
+    renderLineEditor();
+}
+
+function renderLineEditor() {
+    document.querySelector('.line-text').value = getLine().txt;
 }
 
 function onIncreaseTextSize() {
@@ -29,11 +50,6 @@ function onDecreaseTextSize() {
     renderMeme();
 }
 
-function onAlign(alignment) {
-    align(alignment);
-    renderMeme();
-}
-
 function onMoveUp() {
     moveUp();
     renderMeme();
@@ -41,6 +57,16 @@ function onMoveUp() {
 
 function onMoveDown() {
     moveDown();
+    renderMeme();
+}
+
+function onMoveLeft() {
+    moveLeft();
+    renderMeme();
+}
+
+function onMoveRight() {
+    moveRight();
     renderMeme();
 }
 
