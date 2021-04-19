@@ -1,0 +1,13 @@
+.main-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-container {
+    display: flex;
+}
+
+.controls-button {
+    height: 4rem;
+    width: 4rem;
+}

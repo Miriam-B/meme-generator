@@ -2,18 +2,44 @@
 <html>
     <head>
         <title>meme-editor</title>
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="../css/editor.css">
     </head>
     <body>
-        <header>
+        <header class="main-header">
             <div class="logo">memegen</div>
-            <a href="index.html" class="gallery">Gallery</a>
-            <a href="#" class="about">About</a>
+            <nav class="info">
+                <a href="index.html" class="gallery">Gallery</a>
+                <a href="#" class="about">About</a>
+            </nav>
         </header>
-        <main class="main-container">
-            <canvas id="my-canvas" height="450" width="450" onclick="draw(event)"></canvas>
+        <main class="main-container" height="100%">
+            <canvas class="my-canvas" height="500" width="500"></canvas>
+            <div class="button-container">
+                <button class="button" onclick="onIncreaseTextSize()">
+                    <img src="../img/icons/increase-text-size.png" class="controls-button">
+                </button>
+                <button class="button" onclick="onDecreaseTextSize()">
+                    <img src="../img/icons/decrease-text-size.png" class="controls-button">
+                </button>
+                <button class="button" onclick="onAlign('right')">
+                    <img src="../img/icons/align-to-left.png" class="controls-button">
+                </button>
+                <button class="button" onclick="onAlign('left')">
+                    <img src="../img/icons/align-to-right.png" class="controls-button">
+                </button>
+                <button class="button" onclick="onAlign('center')">
+                    <img src="../img/icons/center-text-alignment.png" class="controls-button">
+                </button>
+                <button class="button" onclick="onMoveUp()">
+                    <img src="../img/icons/up-arrow.png" class="controls-button">
+                </button>
+                <button class="button" onclick="onMoveDown()">
+                    <img src="../img/icons/down-arrow.png" class="controls-button">
+                </button>
+            </div>
         </main>
         <footer>memegen<br>all rights reserved 2021</footer>
+        <script src="../js/services/storage-service.js"></script>
         <script src="../js/services/editor-service.js"></script>
         <script src="../js/controllers/editor-controller.js"></script>
     </body>

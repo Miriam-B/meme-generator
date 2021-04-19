@@ -2,20 +2,28 @@ const NUM_IMAGES = 18;
 
 var gImgs = [];
 
-for (let i = 1; i <= NUM_IMAGES; num++) {
-    gImgs.push({id: i, url: 'img/' + i + '.jpg', keywords: []});
+for (let i = 1; i <= NUM_IMAGES; i++) {
+    gImgs.push({id: i, url: '../img/memes/' + i + '.jpg', keywords: []});
 }
 
 var gMeme = {
-    selectedImgId: 0,
+    selectedImgId: 1,
     selectedLineIdx: 0,
-    lines: [ {
+    lines: [{
         txt: 'Your Text Here',
-        size: 20,
-        align: 'left',
-        color: 'red'
+        size: 60,
+        position: {
+            x: 150,
+            y: 255
+        },
+        fillStyle: 'blue',
+        strokeColor: 'red'
     }]
 };
+
+function getMeme() {
+    return gMeme;
+}
 
 function getImgById(id) {
     return gImgs.find((currImg) => currImg.id == id);
@@ -35,23 +43,23 @@ function removeText() {
 }
 
 function increaseTextSize() {
-
+    gMeme.lines[gMeme.selectedLineIdx].size++;
 }
 
 function decreaseTextSize() {
-
+    gMeme.lines[gMeme.selectedLineIdx].size--;
 }
 
-function alignTextRight() {
-
+function align(alignment) {
+    gMeme.lines[gMeme.selectedLineIdx].align = alignment;
 }
 
-function alignTextCenter() {
-
+function moveUp() {
+    gMeme.lines[gMeme.selectedLineIdx].position.y-=10;
 }
 
-function alignTextLeft() {
-
+function moveDown() {
+    gMeme.lines[gMeme.selectedLineIdx].position.y+=10;
 }
 
 function changeFont() {
@@ -66,15 +74,7 @@ function changeBordercolor() {
 
 }
 
-function save() {
-    gCtx.save();
-}
 
-function downloadCanvas(elLink) {
-    const data = gCanvas.toDataURL();
-    elLink.href = data;
-    elLink.download = 'puki';
-}
 
 // function draw(ev) {
 //     const offsetX = ev.offsetX;
