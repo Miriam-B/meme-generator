@@ -1,0 +1,21 @@
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+}
+
+.img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.btn {
+    height: 20rem;
+    width: 20rem;
+}

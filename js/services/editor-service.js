@@ -1,62 +1,9 @@
-const NUM_IMAGES = 18;
-const CANVAS_SIZE = 500;
-const MEME_KEY = 'meme';
-
-const DEFAULT_MEME = {
-    selectedImgId: 1,
-    selectedLineIdx: 0,
-    lines: [{
-        txt: 'Your Text Here',
-        size: 60,
-        position: {
-            x: CANVAS_SIZE / 2,
-            y: CANVAS_SIZE / 2
-        },
-        fillingColor: '#000000',
-        strokeColor: '#ffffff',
-        font: 'Impact'
-    }]
-};
-
-var gImgs = [];
-
-for (let i = 1; i <= NUM_IMAGES; i++) {
-    gImgs.push({
-        id: i,
-        url: '../img/memes/' + i + '.jpg',
-        keywords: []
-    });
-}
-
-if (!getMeme()) {
-    saveMeme();
-}
-
-var gMeme = loadMeme();
-
-function loadMeme() {
-    return loadFromStorage(MEME_KEY);
-}
-
-function saveMeme() {
-    saveToStorage(MEME_KEY, DEFAULT_MEME);
-}
-
-function getMeme() {
-    return gMeme;
-}
-
-function getImgById(id) {
-    return gImgs.find((currImg) => currImg.id == id);
-}
-
 function getLine() {
-    return gMeme.lines[gMeme.selectedLineIdx];
+    return getMeme().lines[getMeme().selectedLineIdx];
 }
-
 
 function addLine(x, y) {
-    gMeme.lines.push({
+    getMeme().lines.push({
         txt: 'Your Text Here',
         size: 60,
         position: {
@@ -70,75 +17,75 @@ function addLine(x, y) {
 }
 
 function removeLine() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+    getMeme().lines.splice(getMeme().selectedLineIdx, 1);
     changeFocus();
 }
 
 function changeFocus() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length;
+    getMeme().selectedLineIdx = (getMeme().selectedLineIdx + 1) % getMeme().lines.length;
 }
 
 function increaseTextSize() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].size++;
+    getMeme().lines[getMeme().selectedLineIdx].size++;
 }
 
 function decreaseTextSize() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].size--;
+    getMeme().lines[getMeme().selectedLineIdx].size--;
 }
 
 function moveUp() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].position.y -= 10;
+    getMeme().lines[getMeme().selectedLineIdx].position.y -= 10;
 }
 
 function moveDown() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].position.y += 10;
+    getMeme().lines[getMeme().selectedLineIdx].position.y += 10;
 }
 
 function moveLeft() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].position.x -= 10;
+    getMeme().lines[getMeme().selectedLineIdx].position.x -= 10;
 }
 
 function moveRight() {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].position.x += 10;
+    getMeme().lines[getMeme().selectedLineIdx].position.x += 10;
 }
 
 function changeLine(value) {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
     
-    gMeme.lines[gMeme.selectedLineIdx].txt = value;
+    getMeme().lines[getMeme().selectedLineIdx].txt = value;
 }
 
 function changeFont(value) {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].font = value;
+    getMeme().lines[getMeme().selectedLineIdx].font = value;
 }
 
 function changeFillingColor(value) {
-    if (!gMeme.lines.length) return;
+    if (!getMeme().lines.length) return;
 
-    gMeme.lines[gMeme.selectedLineIdx].fillingColor = value;
+    getMeme().lines[getMeme().selectedLineIdx].fillingColor = value;
 }
 
 function changeBorderColor(value) {
-    if (!gMeme.lines.length) return;
-    gMeme.lines[gMeme.selectedLineIdx].fillingColor = value;
+    if (!getMeme().lines.length) return;
+    getMeme().lines[getMeme().selectedLineIdx].fillingColor = value;
 }
 
 

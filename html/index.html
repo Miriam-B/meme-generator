@@ -7,17 +7,20 @@
     <body>
         <header>
             <div class="logo">memegen</div>
-            <a href="#" class="gallery">Gallery</a>
-            <a href="#" class="about">About</a>
+            <section class="nav-links">
+                <a href="#" class="gallery">Gallery</a>
+                <a href="#" class="about">About</a>
+            </section>
         </header>
         <nav>
-            <input type="text">
+            <label for="filtering">Search a meme with a keyword:</label>
+            <input type="text" id="filtering">
         </nav>
-        <main class="meme-container"></main>
+        <main class="img-container"></main>
         <section class="info"></section>
         <footer>memegen<br>all rights reserved 2021</footer>
         <script src="../js/services/storage-service.js"></script>
-        <script src="../js/services/main-service.js"></script>
+        <script src="../js/services/meme-service.js"></script>
         <script src="../js/controllers/main-controller.js"></script>
     </body>
 </html>
