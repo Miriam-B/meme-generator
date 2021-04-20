@@ -1,34 +1,46 @@
 const NUM_IMAGES = 18;
+const CANVAS_SIZE = 500;
+const MEME_KEY = 'meme';
 
-var gImgs = [];
-
-for (let i = 1; i <= NUM_IMAGES; i++) {
-    gImgs.push({id: i, url: '../img/memes/' + i + '.jpg', keywords: []});
-}
-
-var gMeme = {
+const DEFAULT_MEME = {
     selectedImgId: 1,
     selectedLineIdx: 0,
     lines: [{
         txt: 'Your Text Here',
         size: 60,
         position: {
-            x: 150,
-            y: 255
+            x: CANVAS_SIZE / 2,
+            y: CANVAS_SIZE / 2
         },
-        fillStyle: 'blue',
-        strokeColor: 'red'
-    },{
-        txt: 'Your Text Here',
-        size: 60,
-        position: {
-            x: 150,
-            y: 255
-        },
-        fillStyle: 'blue',
-        strokeColor: 'red'
+        fillingColor: '#000000',
+        strokeColor: '#ffffff',
+        font: 'Impact'
     }]
 };
+
+var gImgs = [];
+
+for (let i = 1; i <= NUM_IMAGES; i++) {
+    gImgs.push({
+        id: i,
+        url: '../img/memes/' + i + '.jpg',
+        keywords: []
+    });
+}
+
+if (!getMeme()) {
+    saveMeme();
+}
+
+var gMeme = loadMeme();
+
+function loadMeme() {
+    return loadFromStorage(MEME_KEY);
+}
+
+function saveMeme() {
+    saveToStorage(MEME_KEY, DEFAULT_MEME);
+}
 
 function getMeme() {
     return gMeme;
@@ -44,66 +56,89 @@ function getLine() {
 
 
 function addLine(x, y) {
-    gMeme.lines.push(
-        {
-            txt: 'Your Text Here',
-            size: 60,
-            position: {
-                x: x,
-                y: y
-            },
-            fillStyle: 'blue',
-            strokeColor: 'red'
-        }
-    );
+    gMeme.lines.push({
+        txt: 'Your Text Here',
+        size: 60,
+        position: {
+            x: x,
+            y: y
+        },
+        fillingColor: '#000000',
+        strokeColor: '#ffffff',
+        font: 'Impact'
+    });
+}
+
+function removeLine() {
+    if (!gMeme.lines.length) return;
+
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1);
+    changeFocus();
 }
 
 function changeFocus() {
+    if (!gMeme.lines.length) return;
+
     gMeme.selectedLineIdx = (gMeme.selectedLineIdx + 1) % gMeme.lines.length;
 }
 
-function removeText() {
-
-}
-
 function increaseTextSize() {
+    if (!gMeme.lines.length) return;
+
     gMeme.lines[gMeme.selectedLineIdx].size++;
 }
 
 function decreaseTextSize() {
+    if (!gMeme.lines.length) return;
+
     gMeme.lines[gMeme.selectedLineIdx].size--;
 }
 
 function moveUp() {
-    gMeme.lines[gMeme.selectedLineIdx].position.y-=10;
+    if (!gMeme.lines.length) return;
+
+    gMeme.lines[gMeme.selectedLineIdx].position.y -= 10;
 }
 
 function moveDown() {
-    gMeme.lines[gMeme.selectedLineIdx].position.y+=10;
+    if (!gMeme.lines.length) return;
+
+    gMeme.lines[gMeme.selectedLineIdx].position.y += 10;
 }
 
 function moveLeft() {
-    gMeme.lines[gMeme.selectedLineIdx].position.x-=10;
+    if (!gMeme.lines.length) return;
+
+    gMeme.lines[gMeme.selectedLineIdx].position.x -= 10;
 }
 
 function moveRight() {
-    gMeme.lines[gMeme.selectedLineIdx].position.x+=10;
+    if (!gMeme.lines.length) return;
+
+    gMeme.lines[gMeme.selectedLineIdx].position.x += 10;
 }
 
 function changeLine(value) {
+    if (!gMeme.lines.length) return;
+    
     gMeme.lines[gMeme.selectedLineIdx].txt = value;
 }
 
-function changeFont() {
+function changeFont(value) {
+    if (!gMeme.lines.length) return;
 
+    gMeme.lines[gMeme.selectedLineIdx].font = value;
 }
 
-function changeFillingColor() {
+function changeFillingColor(value) {
+    if (!gMeme.lines.length) return;
 
+    gMeme.lines[gMeme.selectedLineIdx].fillingColor = value;
 }
 
-function changeBordercolor() {
-
+function changeBorderColor(value) {
+    if (!gMeme.lines.length) return;
+    gMeme.lines[gMeme.selectedLineIdx].fillingColor = value;
 }
 
 

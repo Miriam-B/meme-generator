@@ -1,1 +1,7 @@
-function renderGall
+(() => {
+    
+})()
+
+function renderGallery() {
+
+}

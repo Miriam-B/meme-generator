@@ -1,20 +1,104 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Impact;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* HEADER */
+
 .main-header {
     display: flex;
     justify-content: space-between;
 }
 
+/* CONTAINERS */
+
 .main-container {
     display: flex;
-}
-
-.controls-button {
-    height: 4rem;
-    width: 4rem;
-    
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 auto;
 }
 
 .button-container {
     display: grid;
-    grid-gap: 6px;
     justify-items: center;
+    row-gap: 3.5rem;
+    column-gap: 1rem;
+    grid-template:
+    "download add remove focus"
+    "up down right left"
+    "increase decrease . ."
+    "filling border . ."
+    ;
+}
+
+.editing-controls-container {
+    /* display: flex;
+    flex-direction: column; */
+}
+
+/* BUTTONS */
+
+.controls-button {
+    height: 4rem;
+    width: 4rem; 
+}
+
+.add-button { grid-area: add; }
+
+.remove-button { grid-area: remove; }
+
+.right-button { grid-area: right; }
+
+.left-button { grid-area: left; }
+
+.up-button { grid-area: up; }
+
+.down-button { grid-area: down; }
+
+.focus-button { grid-area: focus; }
+
+.download-button { grid-area: download; }
+
+.increase-button {
+    grid-area: increase;
+    grid-column: 2/3;
+}
+
+.decrease-button {
+    grid-area: decrease;
+    grid-column: 3/4;
+}
+
+.border-button {
+    grid-area: border;
+    grid-column: 3/4;
+}
+
+.filling-button {
+    grid-area: filling;
+    grid-column: 2/3;
+}
+
+.color-picker {
+    align-self: center;
+    height: 70%;
+}
+
+.color-settings {
+    display: flex;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
 }

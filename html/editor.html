@@ -2,6 +2,8 @@
 <html>
     <head>
         <title>meme-editor</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Antonio&family=Comic+Neue&family=Courier+Prime&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css/editor.css">
     </head>
     <body>
@@ -19,31 +21,53 @@
                 <div class="line-editor">
                     <label for="line-text">Line Text:</label>
                     <input class="line-text" type="text" name="line-text" onchange="onChangeLine(value)">
+                    <label for="line-font">Line font:</label>
+                    <select class="line-font" name="line-font" id="line-font" onchange="onChangeFont(value)">
+                        <option value="Impact">Impact</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Antonio">Antonio</option>
+                        <option value="Comic Neue">Comic Neue</option>
+                        <option value="Courier Prime">Courier Prime</option>
+                    </select>
                 </div>
                 <div class="button-container">
-                    <button class="button" onclick="onAddLine()">
+                    <button class="button add-button" onclick="onAddLine()">
                         <img src="../img/icons/add.png" class="controls-button">
                     </button>
-                    <button class="button" onclick="onIncreaseTextSize()">
+                    <button class="button increase-button" onclick="onIncreaseTextSize()">
                         <img src="../img/icons/increase-text-size.png" class="controls-button">
                     </button>
-                    <button class="button" onclick="onDecreaseTextSize()">
+                    <button class="button decrease-button" onclick="onDecreaseTextSize()">
                         <img src="../img/icons/decrease-text-size.png" class="controls-button">
                     </button>
-                    <button class="button" onclick="onMoveRight('right')">
+                    <button class="button right-button" onclick="onMoveRight('right')">
                         <img src="../img/icons/right-arrow.png" class="controls-button">
                     </button>
-                    <button class="button" onclick="onMoveLeft('left')">
+                    <button class="button left-button" onclick="onMoveLeft('left')">
                         <img src="../img/icons/left-arrow.png" class="controls-button">
                     </button>
-                    <button class="button" onclick="onMoveUp()">
+                    <button class="button up-button" onclick="onMoveUp()">
                         <img src="../img/icons/up-arrow.png" class="controls-button">
                     </button>
-                    <button class="button" onclick="onMoveDown()">
+                    <button class="button down-button" onclick="onMoveDown()">
                         <img src="../img/icons/down-arrow.png" class="controls-button">
                     </button>
-                    <button class="button" onclick="onChangeFocus()">
+                    <button class="button focus-button" onclick="onChangeFocus()">
                         <img src="../img/icons/change-focus.png" class="controls-button">
+                    </button>
+                    <button class="button remove-button" onclick="onRemoveLine()">
+                        <img src="../img/icons/trash.png" class="controls-button">
+                    </button>
+                    <button class="button color-settings border-button" onclick="document.querySelector('.border-color').click()">
+                        <img src="../img/icons/text-stroke.png" class="controls-button">
+                        <input type="color" class="color-picker border-color" onchange="onChangeBorderColor(value)">
+                    </button>
+                    <button class="button color-settings filling-button" onclick="document.querySelector('.filling-color').click()">
+                        <img src="../img/icons/color.png" class="controls-button">
+                        <input type="color" class="color-picker filling-color" onchange="onChangeFillingColor(value)">
+                    </button>
+                    <button class="button download-button" onclick="onDownloadCanvas()">
+                        <img src="../img/icons/download.png" class="controls-button">
                     </button>
                 </div>
             </div>
