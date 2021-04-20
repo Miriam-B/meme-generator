@@ -87,25 +87,3 @@ function changeBorderColor(value) {
     if (!getMeme().lines.length) return;
     getMeme().lines[getMeme().selectedLineIdx].fillingColor = value;
 }
-
-
-
-// function draw(ev) {
-//     const offsetX = ev.offsetX;
-//     const offsetY = ev.offsetY;
-//     const { offsetX, offsetY } = ev
-//     switch (gCurrShape) {
-//         case 'triangle':
-//             drawTriangle(offsetX, offsetY)
-//             break;
-//         case 'rect':
-//             drawRect(offsetX, offsetY)
-//             break;
-//         case 'text':
-//             drawText('Puki', offsetX, offsetY)
-//             break;
-//         case 'line':
-//             drawLine(offsetX, offsetY)
-//             break;
-//     }
-// }
