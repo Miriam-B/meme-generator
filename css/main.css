@@ -8,19 +8,11 @@ body {
     flex-direction: column;
     height: 100%;
     font-size: 1.5rem;
-    color: hotpink;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-}
-
-header, footer{
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .main-container {
@@ -45,17 +37,6 @@ header, footer{
 .btn {
     height: 20rem;
     width: 20rem;
-}
-
-/* LINKS */
-
-a {
-    color: hotpink;
-    text-decoration: none;
-}
-
-a:hover {
-    color: rgb(143, 44, 93);
 }
 
 /* FOOTER */

@@ -22,8 +22,8 @@ function onRemoveLine() {
     renderMeme();
 }
 
-function onChangeLine(value) {
-    changeLine(value);
+function onChangeLine() {
+    changeLine(document.querySelector('.line-text').value);
     renderMeme();
     renderLineEditor();
 }
@@ -45,6 +45,8 @@ function onChangeFocus() {
 }
 
 function renderLineEditor() {
+    if (!getLine()) return;
+
     document.querySelector('.line-text').value = getLine().txt;
     document.querySelector('.border-color').value = getLine().strokeColor;
     document.querySelector('.filling-color').value = getLine().fillingColor;
