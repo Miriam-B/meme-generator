@@ -5,7 +5,7 @@
 function renderGallery() {
     var html = '';
     var elImgContainer = document.querySelector('.img-container');
-    var images = getImgs();
+    var images = getImgsFiltered(document.querySelector('.filtering').value);
     images.forEach((currImg) => {
         html += `<button class='btn' onclick='onImgSelect(${currImg.id})'><img class="img" src='${currImg.url}'></button>`;
     });

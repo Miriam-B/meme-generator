@@ -99,7 +99,7 @@ function onChangeFont(value) {
 function renderLine(line, forDownload) {
     if (!forDownload &&
         getMeme().selectedLineIdx == getMeme().lines.indexOf(line)) {
-        gCtx.lineWidth = 6;
+        gCtx.lineWidth = 10;
         gCtx.strokeStyle = 'red';
         gCtx.font = '' + line.size + 'px ' + line.font;
         gCtx.textAlign = 'center';
