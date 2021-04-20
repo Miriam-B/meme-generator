@@ -19,7 +19,7 @@ var gImgs = [];
 for (let i = 1; i <= NUM_IMAGES; i++) {
     gImgs.push({
         id: i,
-        url: '../img/memes/' + i + '.jpg',
+        url: 'img/memes/' + i + '.jpg',
         keywords: []
     });
 }
