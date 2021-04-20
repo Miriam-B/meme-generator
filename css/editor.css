@@ -10,4 +10,11 @@
 .controls-button {
     height: 4rem;
     width: 4rem;
+    
+}
+
+.button-container {
+    display: grid;
+    grid-gap: 6px;
+    justify-items: center;
 }
