@@ -6,7 +6,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    font-size: 2rem;
 }
 
 canvas {
@@ -147,7 +146,6 @@ small {
         display: flex;
         flex-direction: column;
         height: 100%;
-        font-size: 1.5rem;
     }
     
     canvas {
