@@ -6,7 +6,6 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     display: flex;
     flex-direction: column;
-    height: 100%;
     font-size: 1.5rem;
 }
 
