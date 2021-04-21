@@ -12,6 +12,9 @@ body {
 
 canvas {
     padding: 10px;
+    height: 40rem;
+    width: 40rem;
+    align-self: center;
 }
 
 /* HEADER */
@@ -253,7 +256,7 @@ small {
     
     .color-picker {
         align-self: center;
-        height: 70%;
+        height: 3rem;
     } */
     
     .color-settings {
