@@ -26,14 +26,12 @@ canvas {
 
 .main-container {
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex: 1 0 auto;
+    flex-direction: column;
 }
 
 .button-container {
     display: grid;
-    /* justify-items: center; */
+    justify-content: center;
     row-gap: 0.1rem;
     column-gap: 0.1rem;
     grid-template:
@@ -51,12 +49,13 @@ canvas {
 }
 
 .editing-controls-container {
-    width: 38rem;
+    width: 90vw;
     background-color: rgba(10, 10, 10, 0.1);
     height: 38rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-self: center;
 }
 
 /* BUTTONS */
@@ -121,6 +120,7 @@ canvas {
 
 .color-settings {
     display: flex;
+    justify-content: center;
 }
 
 
@@ -131,3 +131,142 @@ small {
     flex-shrink: 0;
     justify-content: center;
 }
+
+
+@media only screen and (min-width: 1000px)  {
+    html {
+        height: 100%;
+    }
+    
+    body {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        font-size: 1.5rem;
+    }
+    
+    canvas {
+        padding: 10px;
+    }
+    
+    /* HEADER */
+    
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+    
+    }
+    
+    /* CONTAINERS */
+    
+    .main-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex: 1 0 auto;
+    }
+    
+    .button-container {
+        display: grid;
+        row-gap: 0.1rem;
+        column-gap: 0.1rem;
+        grid-template:
+            "focus increase decrease add"
+            "download up down remove"
+            ". left right ."
+            ". filling border .";
+        padding: 1rem;
+    }
+    
+    .line-editor {
+        display: flex;
+        justify-content: center;
+        padding-right: 2rem;
+    }
+    
+    .editing-controls-container {
+        width: 38rem;
+        background-color: rgba(10, 10, 10, 0.1);
+        height: 38rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    /* BUTTONS */
+    
+    .controls-button {
+        height: 4rem;
+        width: 4rem;
+    }
+    
+    .add-button {
+        grid-area: add;
+    }
+    
+    .remove-button {
+        grid-area: remove;
+    }
+    
+    .right-button {
+        grid-area: right;
+    }
+    
+    .left-button {
+        grid-area: left;
+    }
+    
+    .up-button {
+        grid-area: up;
+    }
+    
+    .down-button {
+        grid-area: down;
+    }
+    
+    .focus-button {
+        grid-area: focus;
+    }
+    
+    .download-button {
+        grid-area: download;
+    }
+    
+    .increase-button {
+        grid-area: increase;
+    }
+    
+    .decrease-button {
+        grid-area: decrease;
+    }
+    
+    .border-button {
+        grid-area: border;
+    }
+    
+    .filling-button {
+        grid-area: filling;
+    }
+    
+    .color-picker {
+        align-self: center;
+        height: 70%;
+    } */
+    
+    .color-settings {
+        display: flex;
+        justify-content: center;
+    }
+    
+    
+    /* SMALL */
+    
+    small {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+    }
+}
+
