@@ -8,11 +8,11 @@
         <link rel="stylesheet" href="css/editor.css">
     </head>
     <body>
-        <header class="main-header">
+        <header class="box main-header">
             <div class="logo">memegen</div>
             <nav class="info">
-                <a href="index.html" class="gallery">Gallery</a>
-                <a href="#" class="about">About</a>
+                <a href="index.html" class="box inner-box gallery">Gallery</a>
+                <a href="#" class="box inner-box about">About</a>
             </nav>
         </header>
         <main class="main-container" height="100%">
@@ -59,6 +59,12 @@
                     <button class="button box remove-button" onclick="onRemoveLine()">
                         <img src="img/icons/trash.png" class="controls-button">
                     </button>
+                    
+                    <button class="button box download-button" onclick="onDownloadCanvas()">
+                        <img src="img/icons/download.png" class="controls-button">
+                    </button>
+                </div>
+                <div class="button-container">
                     <button class="button box color-settings border-button" onclick="document.querySelector('.border-color').click()">
                         <img src="img/icons/text-stroke.png" class="controls-button">
                         <input type="color" class="color-picker border-color" onchange="onChangeBorderColor(value)">
@@ -66,9 +72,6 @@
                     <button class="button box color-settings filling-button" onclick="document.querySelector('.filling-color').click()">
                         <img src="img/icons/color.png" class="controls-button">
                         <input type="color" class="color-picker filling-color" onchange="onChangeFillingColor(value)">
-                    </button>
-                    <button class="button box download-button" onclick="onDownloadCanvas()">
-                        <img src="img/icons/download.png" class="controls-button">
                     </button>
                 </div>
             </div>

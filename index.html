@@ -6,16 +6,18 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <header>
+        <header class="box">
             <div class="logo">memegen</div>
             <section class="nav-links">
-                <a href="#" class="gallery">Gallery</a>
-                <a href="#" class="about">About</a>
+                <a href="#" class="box inner-box gallery">Gallery</a>
+                <a href="#" class="box inner-box about">About</a>
             </section>
         </header>
         <nav class="main-nav">
-            <label for="filtering">Search a meme with a keyword:</label>
+            <label for="filtering">Search:</label>
             <input type="text" id="filtering" class="filtering box box-input" onkeyup="renderGallery()">
+            <br/>
+            <label>Choose a meme:</label>
         </nav>
         <main class="img-container"></main>
         <section class="info">
