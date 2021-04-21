@@ -1,85 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>meme-editor</title>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Antonio&family=Comic+Neue&family=Courier+Prime&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/editor.css">
-    </head>
-    <body>
-        <header class="box main-header">
-            <div class="logo">memegen</div>
-            <nav class="info">
-                <a href="index.html" class="box inner-box gallery">Gallery</a>
-                <a href="#" class="box inner-box about">About</a>
-            </nav>
-        </header>
-        <main class="main-container" height="100%">
-            <canvas class="my-canvas box" height="500" width="500"></canvas>
-            
-            <div class="editing-controls-container">    
-                <div class="line-editor">
-                    <label for="line-text">Line Text:</label>
-                    <input class="line-text box box-input" type="text" name="line-text" onkeyup="onChangeLine()">
-                    <label for="line-font">Line font:</label>
-                    <select class="line-font box box-input" name="line-font" id="line-font" onchange="onChangeFont(value)">
-                        <option value="Impact">Impact</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Antonio">Antonio</option>
-                        <option value="Comic Neue">Comic Neue</option>
-                        <option value="Courier Prime">Courier Prime</option>
-                    </select>
-                </div>
-                <div class="button-container">
-                    <button class="button box add-button" onclick="onAddLine()">
-                        <img src="img/icons/add.png" class="controls-button">
-                    </button>
-                    <button class="button box increase-button" onclick="onIncreaseTextSize()">
-                        <img src="img/icons/increase-text-size.png" class="controls-button">
-                    </button>
-                    <button class="button box decrease-button" onclick="onDecreaseTextSize()">
-                        <img src="img/icons/decrease-text-size.png" class="controls-button">
-                    </button>
-                    <button class="button box right-button" onclick="onMoveRight('right')">
-                        <img src="img/icons/right-arrow.png" class="controls-button">
-                    </button>
-                    <button class="button box left-button" onclick="onMoveLeft('left')">
-                        <img src="img/icons/left-arrow.png" class="controls-button">
-                    </button>
-                    <button class="button box up-button" onclick="onMoveUp()">
-                        <img src="img/icons/up-arrow.png" class="controls-button">
-                    </button>
-                    <button class="button box down-button" onclick="onMoveDown()">
-                        <img src="img/icons/down-arrow.png" class="controls-button">
-                    </button>
-                    <button class="button box focus-button" onclick="onChangeFocus()">
-                        <img src="img/icons/change-focus.png" class="controls-button">
-                    </button>
-                    <button class="button box remove-button" onclick="onRemoveLine()">
-                        <img src="img/icons/trash.png" class="controls-button">
-                    </button>
-                    
-                    <button class="button box download-button" onclick="onDownloadCanvas()">
-                        <img src="img/icons/download.png" class="controls-button">
-                    </button>
-                </div>
-                <div class="button-container">
-                    <button class="button box color-settings border-button" onclick="document.querySelector('.border-color').click()">
-                        <img src="img/icons/text-stroke.png" class="controls-button">
-                        <input type="color" class="color-picker border-color" onchange="onChangeBorderColor(value)">
-                    </button>
-                    <button class="button box color-settings filling-button" onclick="document.querySelector('.filling-color').click()">
-                        <img src="img/icons/color.png" class="controls-button">
-                        <input type="color" class="color-picker filling-color" onchange="onChangeFillingColor(value)">
-                    </button>
-                </div>
+
+<head>
+    <title>meme-editor</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio&family=Comic+Neue&family=Courier+Prime&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/editor.css">
+</head>
+
+<body>
+    <header class="box main-header">
+        <div class="logo">memegen</div>
+        <nav class="info">
+            <a href="index.html" class="box inner-box gallery">Gallery</a>
+            <a href="#" class="box inner-box about">About</a>
+        </nav>
+    </header>
+    <main class="main-container" height="100%">
+        <canvas class="my-canvas box" height="500" width="500"></canvas>
+
+        <div class="editing-controls-container">
+            <div class="line-editor">
+                <label for="line-text">Line Text:</label>
+                <input class="line-text box box-input" type="text" name="line-text" onkeyup="onChangeLine()">
+                <label for="line-font">Line font:</label>
+                <select class="line-font box box-input" name="line-font" id="line-font" onchange="onChangeFont(value)">
+                    <option value="Impact">Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Antonio">Antonio</option>
+                    <option value="Comic Neue">Comic Neue</option>
+                    <option value="Courier Prime">Courier Prime</option>
+                </select>
             </div>
-        </main>
-        <small>memegen<br>all rights reserved 2021</small>
-        <script src="js/services/storage-service.js"></script>
-        <script src="js/services/meme-service.js"></script>
-        <script src="js/services/editor-service.js"></script>
-        <script src="js/controllers/editor-controller.js"></script>
-    </body>
+            <div class="button-container">
+                <button class="button box add-button" onclick="onAddLine()">
+                    <img src="img/icons/add.png" class="controls-button">
+                </button>
+                <button class="button box increase-button" onclick="onIncreaseTextSize()">
+                    <img src="img/icons/increase-text-size.png" class="controls-button">
+                </button>
+                <button class="button box decrease-button" onclick="onDecreaseTextSize()">
+                    <img src="img/icons/decrease-text-size.png" class="controls-button">
+                </button>
+                <button class="button box right-button" onclick="onMoveRight('right')">
+                    <img src="img/icons/right-arrow.png" class="controls-button">
+                </button>
+                <button class="button box left-button" onclick="onMoveLeft('left')">
+                    <img src="img/icons/left-arrow.png" class="controls-button">
+                </button>
+                <button class="button box up-button" onclick="onMoveUp()">
+                    <img src="img/icons/up-arrow.png" class="controls-button">
+                </button>
+                <button class="button box down-button" onclick="onMoveDown()">
+                    <img src="img/icons/down-arrow.png" class="controls-button">
+                </button>
+                <button class="button box focus-button" onclick="onChangeFocus()">
+                    <img src="img/icons/change-focus.png" class="controls-button">
+                </button>
+                <button class="button box remove-button" onclick="onRemoveLine()">
+                    <img src="img/icons/trash.png" class="controls-button">
+                </button>
+
+                <button class="button box download-button" onclick="onDownloadCanvas()">
+                    <img src="img/icons/download.png" class="controls-button">
+                </button>
+            </div>
+            <div class="button-container">
+                <button class="button box color-settings border-button"
+                    onclick="document.querySelector('.border-color').click()">
+                    <img src="img/icons/text-stroke.png" class="controls-button">
+                    <input type="color" class="color-picker border-color" onchange="onChangeBorderColor(value)">
+                </button>
+                <button class="button box color-settings filling-button"
+                    onclick="document.querySelector('.filling-color').click()">
+                    <img src="img/icons/color.png" class="controls-button">
+                    <input type="color" class="color-picker filling-color" onchange="onChangeFillingColor(value)">
+                </button>
+            </div>
+        </div>
+    </main>
+    <small>memegen<br>all rights reserved 2021</small>
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/services/editor-service.js"></script>
+    <script src="js/controllers/editor-controller.js"></script>
+</body>
+
 </html>
