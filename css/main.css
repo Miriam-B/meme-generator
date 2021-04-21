@@ -18,6 +18,10 @@ header {
     margin: 5px;
 }
 
+.special-box {
+    padding-top: 11px;
+}
+
 .main-container {
     display: flex;
     justify-content: space-evenly;
