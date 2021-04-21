@@ -7,7 +7,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 canvas {
@@ -59,14 +59,13 @@ canvas {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-self: center;
 }
 
 /* BUTTONS */
 
 .controls-button {
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
 }
 
 .add-button {
