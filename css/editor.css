@@ -8,7 +8,6 @@ body {
     flex-direction: column;
     height: 100%;
     font-size: 1.5rem;
-    color: white;
 }
 
 /* HEADER */
@@ -40,7 +39,14 @@ body {
     ;
 }
 
+.line-editor {
+    display: flex;
+    justify-content: center;
+}
+
 .editing-controls-container {
+    width: 40%;
+    background-color: rgba(49, 49, 49, 0.26);
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -112,9 +118,9 @@ body {
 }
 
 
-/* FOOTER */
+/* SMALL */
 
-footer {
+small {
     display: flex;
     flex-shrink: 0;
     justify-content: center;
