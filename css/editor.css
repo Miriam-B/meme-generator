@@ -27,6 +27,7 @@ canvas {
 .main-container {
     display: flex;
     flex-direction: column;
+    align-self: center;
 }
 
 .button-container {
