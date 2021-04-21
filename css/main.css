@@ -75,6 +75,7 @@ small {
     border: dotted white 2px;
     padding: 5px;   
     width: 19rem;
+    height: 19rem;
     object-fit: cover;
     object-position: bottom;
     padding: 10px;
