@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>meme-generator</title>
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <header class="box">
-            <div class="logo">memegen</div>
-            <section class="nav-links">
-                <a href="#" class="box inner-box gallery">Gallery</a>
-                <a href="#" class="box inner-box about">About</a>
-            </section>
-        </header>
-        <nav class="box main-nav">
-            <label for="filtering">Search:</label>
-            <input type="text" id="filtering" class="filtering box box-input" onkeyup="renderGallery()">
-            <br/>
-            Choose a meme:
-        </nav>
-        <main class="img-container"></main>
-        <section class="info">
-            <img class="self-img" src="img/miri-and-shusha.png">
-            <section class="about-me">
-                <div class="who-am-i">Miriam Baranovska</div>
-                <div class="what-am-i">Who am I? What am I?</div>
-                <div class="my-links">
-                    <a href="https://youtu.be/CPol6D5gDqo" class="linked-in"><img class="link-img" src="img/icons/linkedin.png"></a>
-                    <a href="https://youtu.be/RZYB8TIBCZU" class="facebook"><img class="link-img" src="img/icons/facebook.png"></a>
-                    <a href="https://github.com/Miriam-B" class="git-hub"><img class="link-img" src="img/icons/github.png"></a>
-                </div>
-            </section>
+
+<head>
+    <title>meme-generator</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="box">
+        <div class="logo">memegen</div>
+        <section class="nav-links">
+            <a href="#" class="box inner-box gallery">Gallery</a>
+            <a href="#" class="box inner-box about">About</a>
         </section>
-        <small>memegen<br>all rights reserved 2021</small>
-        <script src="js/services/storage-service.js"></script>
-        <script src="js/services/meme-service.js"></script>
-        <script src="js/controllers/main-controller.js"></script>
-    </body>
+    </header>
+    <nav class="box main-nav">
+        <label for="filtering">Search:</label>
+        <input type="text" id="filtering" class="filtering box box-input" onkeyup="renderGallery()">
+        <br />
+        Choose a meme:
+    </nav>
+    <main class="img-container"></main>
+    <section class="info">
+        <img class="self-img" src="img/miri-and-shusha.png">
+        <section class="about-me">
+            <div class="who-am-i">Miriam Baranovska</div>
+            <div class="what-am-i">Who am I? What am I?</div>
+            <div class="my-links">
+                <a href="https://youtu.be/CPol6D5gDqo" class="linked-in"><img class="link-img"
+                        src="img/icons/linkedin.png"></a>
+                <a href="https://youtu.be/RZYB8TIBCZU" class="facebook"><img class="link-img"
+                        src="img/icons/facebook.png"></a>
+                <a href="https://github.com/Miriam-B" class="git-hub"><img class="link-img"
+                        src="img/icons/github.png"></a>
+            </div>
+        </section>
+    </section>
+    <small>memegen<br>all rights reserved 2021</small>
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/controllers/main-controller.js"></script>
+</body>
+
 </html>
