@@ -80,12 +80,18 @@ small,
 /* ABOUT */
 
 .about-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     margin-top: 25px;
     text-align: center;
+    height: 75vh;
 }
 
-.plus-icon-about, .focus-icon-about {
-    height: 50px;
+.plus-icon-about,
+.focus-icon-about,
+.trash-icon-about {
+    height: 33px;
 }
 
 /* BACKGROUND */
@@ -121,5 +127,6 @@ small {
     display: flex;
     flex-shrink: 0;
     justify-content: center;
+    text-align: center;
     padding: 10px;
 }
