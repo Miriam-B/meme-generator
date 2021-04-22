@@ -44,7 +44,6 @@ body {
     border: dotted 2px white;
     border-radius: 10px;
     padding: 10px;
-    cursor: pointer;
     transition: background 0.4s ease-in-out;
 }
 

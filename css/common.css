@@ -71,6 +71,8 @@ body {
     touch-action: manipulation;
 }
 
+button { cursor: pointer; }
+
 header,
 small,
 .nav-links {
