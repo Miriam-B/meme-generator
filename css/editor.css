@@ -6,8 +6,6 @@ body {
 
 canvas {
     padding: 10px;
-    height: 40rem;
-    width: 40rem;
     align-self: center;
     box-shadow: 2px 5px 16px 0px rgba(92, 89, 89, 0.4), 5px 5px 15px 5px rgba(0,0,0,0);
 }

@@ -1,10 +1,14 @@
 var gCanvas;
 var gCtx;
+var ogCanvasSize;
 
 (function init() {
     gCanvas = document.querySelector('.my-canvas');
     gCtx = gCanvas.getContext('2d');
-
+    ogCanvasSize = { 
+        width: 600,
+        height: 600
+    };
     renderMeme();
     renderLineEditor();
 })();
@@ -83,13 +87,13 @@ function onMoveRight() {
     renderMeme();
 }
 
-function onChangeFillingColor(value) {
-    changeFillingColor(value);
+function onChangeFillingColor() {
+    changeFillingColor(document.querySelector('.filling-color').value);
     renderMeme();
 }
 
-function onChangeBorderColor(value) {
-    changeBorderColor(value);
+function onChangeBorderColor() {
+    changeBorderColor(document.querySelector('.border-color').value);
     renderMeme();
 }
 
@@ -114,8 +118,6 @@ function renderLine(line, forDownload) {
     gCtx.font = '' + line.size + 'px ' + line.font;
     gCtx.textAlign = 'center';
 
-    var mt = gCtx.measureText(line.txt);
-
     gCtx.fillText(line.txt, line.position.x, line.position.y);
     gCtx.strokeText(line.txt, line.position.x, line.position.y);
 
@@ -126,6 +128,8 @@ function renderImg(src, callback) {
     var img = new Image();
     img.src = src;
     img.onload = function() {
+        gCanvas.height = img.height * (ogCanvasSize.width / img.width);
+        gCanvas.width = ogCanvasSize.width;
         gCtx.drawImage(img, 0, 0, gCanvas.width, gCanvas.height);
         callback();
     };

@@ -38,9 +38,9 @@ input {
 
 label {
     text-align: right;
-    width: 140px;
     padding-top: 5px;
     padding-right: 5px;
+    padding-left: 10px
 }
 
 .box-input {
@@ -63,7 +63,7 @@ select {
 
 body {
     font-size: 2rem;
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', Arial, Helvetica, sans-serif;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
@@ -83,9 +83,9 @@ small,
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin-top: 25px;
+    margin-top: 20px;
     text-align: center;
-    height: 75vh;
+    height: 80vh;
 }
 
 .plus-icon-about,

@@ -22,7 +22,7 @@
         </nav>
     </header>
     <main class="main-container" height="100%">
-        <canvas class="my-canvas box" height="500" width="500"></canvas>
+        <canvas class="my-canvas box"></canvas>
 
         <div class="editing-controls-container">
             <div class="line-editor">
@@ -74,12 +74,12 @@
                 <button class="button box color-settings border-button"
                     onclick="document.querySelector('.border-color').click()">
                     <img src="img/icons/text-stroke.png" class="controls-button">
-                    <input type="color" class="color-picker border-color" onchange="onChangeBorderColor(value)">
+                    <input type="color" class="color-picker border-color" oninput="onChangeBorderColor()">
                 </button>
                 <button class="button box color-settings filling-button"
                     onclick="document.querySelector('.filling-color').click()">
                     <img src="img/icons/color.png" class="controls-button">
-                    <input type="color" class="color-picker filling-color" onchange="onChangeFillingColor(value)">
+                    <input type="color" class="color-picker filling-color" oninput="onChangeFillingColor()">
                 </button>
             </div>
         </div>

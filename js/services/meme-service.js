@@ -1,5 +1,4 @@
-const NUM_IMAGES = 18;
-const CANVAS_SIZE = 500;
+const NUM_IMAGES = 19;
 const MEME_KEY = 'meme';
 const DEFAULT_MEME = {
     selectedImgId: 1,
@@ -42,7 +41,9 @@ gImgs[12].keywords = ['cheers'];
 gImgs[13].keywords = ['matrix'];
 gImgs[14].keywords = ['one does not simply', 'lord of the rings'];
 gImgs[15].keywords = ['star trek', 'laughter'];
-gImgs[16].keywords = ['toy story'];
+gImgs[16].keywords = ['putin', 'politics'];
+gImgs[17].keywords = ['toy story'];
+gImgs[18].keywords = ['test'];
 
 
 var gMeme = loadMeme();
