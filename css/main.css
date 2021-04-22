@@ -1,15 +1,6 @@
-html {
-    height: 100%;
-}
-
 body {
     display: flex;
     flex-direction: column;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
 }
 
 .main-nav {
@@ -37,21 +28,16 @@ header {
     padding: 10px;
 }
 
-small {
-    padding: 10px;
-}
-
 .img {
     width: 100%;
     object-fit: cover;
-    -webkit-box-shadow: 2px 5px 16px 0px rgba(92, 89, 89, 0.4), 5px 5px 15px 5px rgba(0,0,0,0);
     box-shadow: 2px 5px 16px 0px rgba(92, 89, 89, 0.4), 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
 .btn {
     height: 100%;
     width: 16rem;
-    height:auto;
+    height: auto;
     font-size: 100%;
     border: 0;
     padding: 0;
@@ -59,6 +45,13 @@ small {
     border: dotted 2px white;
     border-radius: 10px;
     padding: 10px;
+    cursor: pointer;
+    transition: background 0.4s ease-in-out;
+}
+
+.btn:hover {
+    background-color: rgba(255, 255, 255, 0.527);
+    transition: background 0.4s ease-in-out;
 }
 
 /* INFO */
@@ -96,12 +89,4 @@ small {
 
 .link-img {
     height: 45px;
-}
-
-/* SMALL */
-
-small {
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
 }
